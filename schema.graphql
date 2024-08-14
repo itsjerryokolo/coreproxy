@@ -1,0 +1,558 @@
+type OwnerChanged @entity(immutable: true) {
+  id: Bytes!
+  oldOwner: Bytes! # address
+  newOwner: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type OwnerNominated @entity(immutable: true) {
+  id: Bytes!
+  newOwner: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type Upgraded @entity(immutable: true) {
+  id: Bytes!
+  self: Bytes! # address
+  implementation: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type FeatureFlagAllowAllSet @entity(immutable: true) {
+  id: Bytes!
+  feature: Bytes! # bytes32
+  allowAll: Boolean! # bool
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type FeatureFlagAllowlistAdded @entity(immutable: true) {
+  id: Bytes!
+  feature: Bytes! # bytes32
+  account: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type FeatureFlagAllowlistRemoved @entity(immutable: true) {
+  id: Bytes!
+  feature: Bytes! # bytes32
+  account: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type FeatureFlagDeniersReset @entity(immutable: true) {
+  id: Bytes!
+  feature: Bytes! # bytes32
+  deniers: [Bytes!]! # address[]
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type FeatureFlagDenyAllSet @entity(immutable: true) {
+  id: Bytes!
+  feature: Bytes! # bytes32
+  denyAll: Boolean! # bool
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type AccountCreated @entity(immutable: true) {
+  id: Bytes!
+  accountId: BigInt! # uint128
+  owner: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type PermissionGranted @entity(immutable: true) {
+  id: Bytes!
+  accountId: BigInt! # uint128
+  permission: Bytes! # bytes32
+  user: Bytes! # address
+  sender: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type PermissionRevoked @entity(immutable: true) {
+  id: Bytes!
+  accountId: BigInt! # uint128
+  permission: Bytes! # bytes32
+  user: Bytes! # address
+  sender: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type DebtAssociated @entity(immutable: true) {
+  id: Bytes!
+  marketId: BigInt! # uint128
+  poolId: BigInt! # uint128
+  collateralType: Bytes! # address
+  accountId: BigInt! # uint128
+  amount: BigInt! # uint256
+  updatedDebt: BigInt! # int256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type AssociatedSystemSet @entity(immutable: true) {
+  id: Bytes!
+  kind: Bytes! # bytes32
+  Contract_id: Bytes! # bytes32
+  proxy: Bytes! # address
+  impl: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type CollateralLockCreated @entity(immutable: true) {
+  id: Bytes!
+  accountId: BigInt! # uint128
+  collateralType: Bytes! # address
+  tokenAmount: BigInt! # uint256
+  expireTimestamp: BigInt! # uint64
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type CollateralLockExpired @entity(immutable: true) {
+  id: Bytes!
+  accountId: BigInt! # uint128
+  collateralType: Bytes! # address
+  tokenAmount: BigInt! # uint256
+  expireTimestamp: BigInt! # uint64
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type Deposited @entity(immutable: true) {
+  id: Bytes!
+  accountId: BigInt! # uint128
+  collateralType: Bytes! # address
+  tokenAmount: BigInt! # uint256
+  sender: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type Withdrawn @entity(immutable: true) {
+  id: Bytes!
+  accountId: BigInt! # uint128
+  collateralType: Bytes! # address
+  tokenAmount: BigInt! # uint256
+  sender: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type CollateralConfigured @entity(immutable: true) {
+  id: Bytes!
+  collateralType: Bytes! # address
+  config_depositingEnabled: Boolean! # bool
+  config_issuanceRatioD18: BigInt! # uint256
+  config_liquidationRatioD18: BigInt! # uint256
+  config_liquidationRewardD18: BigInt! # uint256
+  config_oracleNodeId: Bytes! # bytes32
+  config_tokenAddress: Bytes! # address
+  config_minDelegationD18: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type TransferCrossChainInitiated @entity(immutable: true) {
+  id: Bytes!
+  destChainId: BigInt! # uint64
+  amount: BigInt! # uint256
+  sender: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type IssuanceFeePaid @entity(immutable: true) {
+  id: Bytes!
+  accountId: BigInt! # uint128
+  poolId: BigInt! # uint128
+  collateralType: Bytes! # address
+  feeAmount: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type UsdBurned @entity(immutable: true) {
+  id: Bytes!
+  accountId: BigInt! # uint128
+  poolId: BigInt! # uint128
+  collateralType: Bytes! # address
+  amount: BigInt! # uint256
+  sender: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type UsdMinted @entity(immutable: true) {
+  id: Bytes!
+  accountId: BigInt! # uint128
+  poolId: BigInt! # uint128
+  collateralType: Bytes! # address
+  amount: BigInt! # uint256
+  sender: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type Liquidation @entity(immutable: true) {
+  id: Bytes!
+  accountId: BigInt! # uint128
+  poolId: BigInt! # uint128
+  collateralType: Bytes! # address
+  liquidationData_debtLiquidated: BigInt! # uint256
+  liquidationData_collateralLiquidated: BigInt! # uint256
+  liquidationData_amountRewarded: BigInt! # uint256
+  liquidateAsAccountId: BigInt! # uint128
+  sender: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type VaultLiquidation @entity(immutable: true) {
+  id: Bytes!
+  poolId: BigInt! # uint128
+  collateralType: Bytes! # address
+  liquidationData_debtLiquidated: BigInt! # uint256
+  liquidationData_collateralLiquidated: BigInt! # uint256
+  liquidationData_amountRewarded: BigInt! # uint256
+  liquidateAsAccountId: BigInt! # uint128
+  sender: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type MarketCollateralDeposited @entity(immutable: true) {
+  id: Bytes!
+  marketId: BigInt! # uint128
+  collateralType: Bytes! # address
+  tokenAmount: BigInt! # uint256
+  sender: Bytes! # address
+  creditCapacity: BigInt! # int128
+  netIssuance: BigInt! # int128
+  depositedCollateralValue: BigInt! # uint256
+  reportedDebt: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type MarketCollateralWithdrawn @entity(immutable: true) {
+  id: Bytes!
+  marketId: BigInt! # uint128
+  collateralType: Bytes! # address
+  tokenAmount: BigInt! # uint256
+  sender: Bytes! # address
+  creditCapacity: BigInt! # int128
+  netIssuance: BigInt! # int128
+  depositedCollateralValue: BigInt! # uint256
+  reportedDebt: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type MaximumMarketCollateralConfigured @entity(immutable: true) {
+  id: Bytes!
+  marketId: BigInt! # uint128
+  collateralType: Bytes! # address
+  systemAmount: BigInt! # uint256
+  owner: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type MarketRegistered @entity(immutable: true) {
+  id: Bytes!
+  market: Bytes! # address
+  marketId: BigInt! # uint128
+  sender: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type MarketSystemFeePaid @entity(immutable: true) {
+  id: Bytes!
+  marketId: BigInt! # uint128
+  feeAmount: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type MarketUsdDeposited @entity(immutable: true) {
+  id: Bytes!
+  marketId: BigInt! # uint128
+  target: Bytes! # address
+  amount: BigInt! # uint256
+  market: Bytes! # address
+  creditCapacity: BigInt! # int128
+  netIssuance: BigInt! # int128
+  depositedCollateralValue: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type MarketUsdWithdrawn @entity(immutable: true) {
+  id: Bytes!
+  marketId: BigInt! # uint128
+  target: Bytes! # address
+  amount: BigInt! # uint256
+  market: Bytes! # address
+  creditCapacity: BigInt! # int128
+  netIssuance: BigInt! # int128
+  depositedCollateralValue: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type SetMarketMinLiquidityRatio @entity(immutable: true) {
+  id: Bytes!
+  marketId: BigInt! # uint128
+  minLiquidityRatio: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type SetMinDelegateTime @entity(immutable: true) {
+  id: Bytes!
+  marketId: BigInt! # uint128
+  minDelegateTime: BigInt! # uint32
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type PoolApprovedAdded @entity(immutable: true) {
+  id: Bytes!
+  poolId: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type PoolApprovedRemoved @entity(immutable: true) {
+  id: Bytes!
+  poolId: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type PreferredPoolSet @entity(immutable: true) {
+  id: Bytes!
+  poolId: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type PoolCollateralConfigurationUpdated @entity(immutable: true) {
+  id: Bytes!
+  poolId: BigInt! # uint128
+  collateralType: Bytes! # address
+  config_collateralLimitD18: BigInt! # uint256
+  config_issuanceRatioD18: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type PoolCollateralDisabledByDefaultSet @entity(immutable: true) {
+  id: Bytes!
+  poolId: BigInt! # uint128
+  disabled: Boolean! # bool
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type PoolConfigurationSet @entity(immutable: true) {
+  id: Bytes!
+  poolId: BigInt! # uint128
+  markets: [Bytes!]! # tuple[]
+  sender: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type PoolCreated @entity(immutable: true) {
+  id: Bytes!
+  poolId: BigInt! # uint128
+  owner: Bytes! # address
+  sender: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type PoolNameUpdated @entity(immutable: true) {
+  id: Bytes!
+  poolId: BigInt! # uint128
+  name: String! # string
+  sender: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type PoolNominationRenounced @entity(immutable: true) {
+  id: Bytes!
+  poolId: BigInt! # uint128
+  owner: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type PoolNominationRevoked @entity(immutable: true) {
+  id: Bytes!
+  poolId: BigInt! # uint128
+  owner: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type PoolOwnerNominated @entity(immutable: true) {
+  id: Bytes!
+  poolId: BigInt! # uint128
+  nominatedOwner: Bytes! # address
+  owner: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type PoolOwnershipAccepted @entity(immutable: true) {
+  id: Bytes!
+  poolId: BigInt! # uint128
+  owner: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type PoolOwnershipRenounced @entity(immutable: true) {
+  id: Bytes!
+  poolId: BigInt! # uint128
+  owner: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type SetMinLiquidityRatio @entity(immutable: true) {
+  id: Bytes!
+  minLiquidityRatio: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type RewardsClaimed @entity(immutable: true) {
+  id: Bytes!
+  accountId: BigInt! # uint128
+  poolId: BigInt! # uint128
+  collateralType: Bytes! # address
+  distributor: Bytes! # address
+  amount: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type RewardsDistributed @entity(immutable: true) {
+  id: Bytes!
+  poolId: BigInt! # uint128
+  collateralType: Bytes! # address
+  distributor: Bytes! # address
+  amount: BigInt! # uint256
+  start: BigInt! # uint256
+  duration: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type RewardsDistributorRegistered @entity(immutable: true) {
+  id: Bytes!
+  poolId: BigInt! # uint128
+  collateralType: Bytes! # address
+  distributor: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type RewardsDistributorRemoved @entity(immutable: true) {
+  id: Bytes!
+  poolId: BigInt! # uint128
+  collateralType: Bytes! # address
+  distributor: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type NewSupportedCrossChainNetwork @entity(immutable: true) {
+  id: Bytes!
+  newChainId: BigInt! # uint64
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type DelegationUpdated @entity(immutable: true) {
+  id: Bytes!
+  accountId: BigInt! # uint128
+  poolId: BigInt! # uint128
+  collateralType: Bytes! # address
+  amount: BigInt! # uint256
+  leverage: BigInt! # uint256
+  sender: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}

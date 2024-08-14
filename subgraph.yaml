@@ -1,0 +1,182 @@
+specVersion: 1.0.0
+indexerHints:
+  prune: auto
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum
+    name: Contract
+    network: mainnet
+    source:
+      address: "0xffffffaeff0b96ea8e4f94b2253f31abdd875847"
+      abi: Contract
+      startBlock: 0
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - OwnerChanged
+        - OwnerNominated
+        - Upgraded
+        - FeatureFlagAllowAllSet
+        - FeatureFlagAllowlistAdded
+        - FeatureFlagAllowlistRemoved
+        - FeatureFlagDeniersReset
+        - FeatureFlagDenyAllSet
+        - AccountCreated
+        - PermissionGranted
+        - PermissionRevoked
+        - DebtAssociated
+        - AssociatedSystemSet
+        - CollateralLockCreated
+        - CollateralLockExpired
+        - Deposited
+        - Withdrawn
+        - CollateralConfigured
+        - TransferCrossChainInitiated
+        - IssuanceFeePaid
+        - UsdBurned
+        - UsdMinted
+        - Liquidation
+        - VaultLiquidation
+        - MarketCollateralDeposited
+        - MarketCollateralWithdrawn
+        - MaximumMarketCollateralConfigured
+        - MarketRegistered
+        - MarketSystemFeePaid
+        - MarketUsdDeposited
+        - MarketUsdWithdrawn
+        - SetMarketMinLiquidityRatio
+        - SetMinDelegateTime
+        - PoolApprovedAdded
+        - PoolApprovedRemoved
+        - PreferredPoolSet
+        - PoolCollateralConfigurationUpdated
+        - PoolCollateralDisabledByDefaultSet
+        - PoolConfigurationSet
+        - PoolCreated
+        - PoolNameUpdated
+        - PoolNominationRenounced
+        - PoolNominationRevoked
+        - PoolOwnerNominated
+        - PoolOwnershipAccepted
+        - PoolOwnershipRenounced
+        - SetMinLiquidityRatio
+        - RewardsClaimed
+        - RewardsDistributed
+        - RewardsDistributorRegistered
+        - RewardsDistributorRemoved
+        - NewSupportedCrossChainNetwork
+        - DelegationUpdated
+      abis:
+        - name: Contract
+          file: ./abis/Contract.json
+      eventHandlers:
+        - event: OwnerChanged(address,address)
+          handler: handleOwnerChanged
+        - event: OwnerNominated(address)
+          handler: handleOwnerNominated
+        - event: Upgraded(indexed address,address)
+          handler: handleUpgraded
+        - event: FeatureFlagAllowAllSet(indexed bytes32,bool)
+          handler: handleFeatureFlagAllowAllSet
+        - event: FeatureFlagAllowlistAdded(indexed bytes32,address)
+          handler: handleFeatureFlagAllowlistAdded
+        - event: FeatureFlagAllowlistRemoved(indexed bytes32,address)
+          handler: handleFeatureFlagAllowlistRemoved
+        - event: FeatureFlagDeniersReset(indexed bytes32,address[])
+          handler: handleFeatureFlagDeniersReset
+        - event: FeatureFlagDenyAllSet(indexed bytes32,bool)
+          handler: handleFeatureFlagDenyAllSet
+        - event: AccountCreated(indexed uint128,indexed address)
+          handler: handleAccountCreated
+        - event: PermissionGranted(indexed uint128,indexed bytes32,indexed address,address)
+          handler: handlePermissionGranted
+        - event: PermissionRevoked(indexed uint128,indexed bytes32,indexed address,address)
+          handler: handlePermissionRevoked
+        - event: DebtAssociated(indexed uint128,indexed uint128,indexed address,uint128,uint256,int256)
+          handler: handleDebtAssociated
+        - event: AssociatedSystemSet(indexed bytes32,indexed bytes32,address,address)
+          handler: handleAssociatedSystemSet
+        - event: CollateralLockCreated(indexed uint128,indexed address,uint256,uint64)
+          handler: handleCollateralLockCreated
+        - event: CollateralLockExpired(indexed uint128,indexed address,uint256,uint64)
+          handler: handleCollateralLockExpired
+        - event: Deposited(indexed uint128,indexed address,uint256,indexed address)
+          handler: handleDeposited
+        - event: Withdrawn(indexed uint128,indexed address,uint256,indexed address)
+          handler: handleWithdrawn
+        - event: CollateralConfigured(indexed address,(bool,uint256,uint256,uint256,bytes32,address,uint256))
+          handler: handleCollateralConfigured
+        - event: TransferCrossChainInitiated(indexed uint64,indexed uint256,address)
+          handler: handleTransferCrossChainInitiated
+        - event: IssuanceFeePaid(indexed uint128,indexed uint128,address,uint256)
+          handler: handleIssuanceFeePaid
+        - event: UsdBurned(indexed uint128,indexed uint128,address,uint256,indexed address)
+          handler: handleUsdBurned
+        - event: UsdMinted(indexed uint128,indexed uint128,address,uint256,indexed address)
+          handler: handleUsdMinted
+        - event: Liquidation(indexed uint128,indexed uint128,indexed address,(uint256,uint256,uint256),uint128,address)
+          handler: handleLiquidation
+        - event: VaultLiquidation(indexed uint128,indexed address,(uint256,uint256,uint256),uint128,address)
+          handler: handleVaultLiquidation
+        - event: MarketCollateralDeposited(indexed uint128,indexed address,uint256,indexed address,int128,int128,uint256,uint256)
+          handler: handleMarketCollateralDeposited
+        - event: MarketCollateralWithdrawn(indexed uint128,indexed address,uint256,indexed address,int128,int128,uint256,uint256)
+          handler: handleMarketCollateralWithdrawn
+        - event: MaximumMarketCollateralConfigured(indexed uint128,indexed address,uint256,indexed address)
+          handler: handleMaximumMarketCollateralConfigured
+        - event: MarketRegistered(indexed address,indexed uint128,indexed address)
+          handler: handleMarketRegistered
+        - event: MarketSystemFeePaid(indexed uint128,uint256)
+          handler: handleMarketSystemFeePaid
+        - event: MarketUsdDeposited(indexed uint128,indexed address,uint256,indexed address,int128,int128,uint256)
+          handler: handleMarketUsdDeposited
+        - event: MarketUsdWithdrawn(indexed uint128,indexed address,uint256,indexed address,int128,int128,uint256)
+          handler: handleMarketUsdWithdrawn
+        - event: SetMarketMinLiquidityRatio(indexed uint128,uint256)
+          handler: handleSetMarketMinLiquidityRatio
+        - event: SetMinDelegateTime(indexed uint128,uint32)
+          handler: handleSetMinDelegateTime
+        - event: PoolApprovedAdded(uint256)
+          handler: handlePoolApprovedAdded
+        - event: PoolApprovedRemoved(uint256)
+          handler: handlePoolApprovedRemoved
+        - event: PreferredPoolSet(uint256)
+          handler: handlePreferredPoolSet
+        - event: PoolCollateralConfigurationUpdated(indexed uint128,address,(uint256,uint256))
+          handler: handlePoolCollateralConfigurationUpdated
+        - event: PoolCollateralDisabledByDefaultSet(uint128,bool)
+          handler: handlePoolCollateralDisabledByDefaultSet
+        - event: PoolConfigurationSet(indexed uint128,(uint128,uint128,int128)[],indexed address)
+          handler: handlePoolConfigurationSet
+        - event: PoolCreated(indexed uint128,indexed address,indexed address)
+          handler: handlePoolCreated
+        - event: PoolNameUpdated(indexed uint128,string,indexed address)
+          handler: handlePoolNameUpdated
+        - event: PoolNominationRenounced(indexed uint128,indexed address)
+          handler: handlePoolNominationRenounced
+        - event: PoolNominationRevoked(indexed uint128,indexed address)
+          handler: handlePoolNominationRevoked
+        - event: PoolOwnerNominated(indexed uint128,indexed address,indexed address)
+          handler: handlePoolOwnerNominated
+        - event: PoolOwnershipAccepted(indexed uint128,indexed address)
+          handler: handlePoolOwnershipAccepted
+        - event: PoolOwnershipRenounced(indexed uint128,indexed address)
+          handler: handlePoolOwnershipRenounced
+        - event: SetMinLiquidityRatio(uint256)
+          handler: handleSetMinLiquidityRatio
+        - event: RewardsClaimed(indexed uint128,indexed uint128,indexed address,address,uint256)
+          handler: handleRewardsClaimed
+        - event: RewardsDistributed(indexed uint128,indexed address,address,uint256,uint256,uint256)
+          handler: handleRewardsDistributed
+        - event: RewardsDistributorRegistered(indexed uint128,indexed address,indexed address)
+          handler: handleRewardsDistributorRegistered
+        - event: RewardsDistributorRemoved(indexed uint128,indexed address,indexed address)
+          handler: handleRewardsDistributorRemoved
+        - event: NewSupportedCrossChainNetwork(uint64)
+          handler: handleNewSupportedCrossChainNetwork
+        - event: DelegationUpdated(indexed uint128,indexed uint128,address,uint256,uint256,indexed address)
+          handler: handleDelegationUpdated
+      file: ./src/contract.ts
