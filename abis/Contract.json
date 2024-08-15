@@ -38,7 +38,7 @@
     "stateMutability": "view",
     "payable": false,
     "inputs": [],
-    "outputs": [{ "type": "address" }]
+    "outputs": [{ "type": "address", "name": "name" }]
   },
   {
     "type": "function",
@@ -55,7 +55,7 @@
     "stateMutability": "view",
     "payable": false,
     "inputs": [],
-    "outputs": [{ "type": "address" }]
+    "outputs": [{ "type": "address", "name": "name" }]
   },
   {
     "type": "function",
@@ -64,7 +64,7 @@
     "stateMutability": "view",
     "payable": false,
     "inputs": [],
-    "outputs": [{ "type": "address" }]
+    "outputs": [{ "type": "address", "name": "name" }]
   },
   {
     "type": "function",
@@ -154,7 +154,7 @@
     "stateMutability": "view",
     "payable": false,
     "inputs": [{ "type": "bytes32", "name": "feature" }],
-    "outputs": [{ "type": "address[]" }]
+    "outputs": [{ "type": "address[]", "name": "name" }]
   },
   {
     "type": "function",
@@ -163,7 +163,7 @@
     "stateMutability": "view",
     "payable": false,
     "inputs": [{ "type": "bytes32", "name": "feature" }],
-    "outputs": [{ "type": "bool" }]
+    "outputs": [{ "type": "bool", "name": "name" }]
   },
   {
     "type": "function",
@@ -172,7 +172,7 @@
     "stateMutability": "view",
     "payable": false,
     "inputs": [{ "type": "bytes32", "name": "feature" }],
-    "outputs": [{ "type": "address[]" }]
+    "outputs": [{ "type": "address[]", "name": "name" }]
   },
   {
     "type": "function",
@@ -181,7 +181,7 @@
     "stateMutability": "view",
     "payable": false,
     "inputs": [{ "type": "bytes32", "name": "feature" }],
-    "outputs": [{ "type": "bool" }]
+    "outputs": [{ "type": "bool", "name": "name" }]
   },
   {
     "type": "function",
@@ -193,7 +193,7 @@
       { "type": "bytes32", "name": "feature" },
       { "type": "address", "name": "account" }
     ],
-    "outputs": [{ "type": "bool" }]
+    "outputs": [{ "type": "bool", "name": "name" }]
   },
   {
     "type": "function",
@@ -294,7 +294,7 @@
     "stateMutability": "view",
     "payable": false,
     "inputs": [{ "type": "uint128", "name": "accountId" }],
-    "outputs": [{ "type": "uint256" }]
+    "outputs": [{ "type": "uint256", "name": "name" }]
   },
   {
     "type": "function",
@@ -303,7 +303,7 @@
     "stateMutability": "view",
     "payable": false,
     "inputs": [{ "type": "uint128", "name": "accountId" }],
-    "outputs": [{ "type": "address" }]
+    "outputs": [{ "type": "address", "name": "name" }]
   },
   {
     "type": "function",
@@ -330,7 +330,7 @@
     "stateMutability": "view",
     "payable": false,
     "inputs": [],
-    "outputs": [{ "type": "address" }]
+    "outputs": [{ "type": "address", "name": "name" }]
   },
   {
     "type": "function",
@@ -355,7 +355,7 @@
       { "type": "bytes32", "name": "permission" },
       { "type": "address", "name": "user" }
     ],
-    "outputs": [{ "type": "bool" }]
+    "outputs": [{ "type": "bool", "name": "name" }]
   },
   {
     "type": "function",
@@ -368,7 +368,7 @@
       { "type": "bytes32", "name": "permission" },
       { "type": "address", "name": "user" }
     ],
-    "outputs": [{ "type": "bool" }]
+    "outputs": [{ "type": "bool", "name": "name" }]
   },
   {
     "type": "function",
@@ -430,7 +430,7 @@
       { "type": "uint128", "name": "accountId" },
       { "type": "uint256", "name": "amount" }
     ],
-    "outputs": [{ "type": "int256" }]
+    "outputs": [{ "type": "int256", "name": "name" }]
   },
 
   {
@@ -588,7 +588,7 @@
       { "type": "uint128", "name": "accountId" },
       { "type": "address", "name": "collateralType" }
     ],
-    "outputs": [{ "type": "uint256" }]
+    "outputs": [{ "type": "uint256", "name": "name" }]
   },
   {
     "type": "function",
@@ -702,6 +702,7 @@
     "outputs": [
       {
         "type": "tuple",
+        "name": "name",
         "components": [
           { "type": "bool", "name": "depositingEnabled" },
           { "type": "uint256", "name": "issuanceRatioD18" },
@@ -724,6 +725,7 @@
     "outputs": [
       {
         "type": "tuple[]",
+        "name": "name",
         "components": [
           { "type": "bool", "name": "depositingEnabled" },
           { "type": "uint256", "name": "issuanceRatioD18" },
@@ -743,7 +745,7 @@
     "stateMutability": "view",
     "payable": false,
     "inputs": [{ "type": "address", "name": "collateralType" }],
-    "outputs": [{ "type": "uint256" }]
+    "outputs": [{ "type": "uint256", "name": "name" }]
   },
 
   {
@@ -890,7 +892,7 @@
       { "type": "uint128", "name": "poolId" },
       { "type": "address", "name": "collateralType" }
     ],
-    "outputs": [{ "type": "bool" }]
+    "outputs": [{ "type": "bool", "name": "name" }]
   },
   {
     "type": "function",
@@ -901,7 +903,7 @@
       { "type": "uint128", "name": "poolId" },
       { "type": "address", "name": "collateralType" }
     ],
-    "outputs": [{ "type": "bool" }]
+    "outputs": [{ "type": "bool", "name": "name" }]
   },
   {
     "type": "function",
@@ -1034,7 +1036,7 @@
     "stateMutability": "view",
     "payable": false,
     "inputs": [{ "type": "uint128", "name": "marketId" }],
-    "outputs": [{ "type": "uint256" }]
+    "outputs": [{ "type": "uint256", "name": "name" }]
   },
   {
     "type": "function",
@@ -1046,7 +1048,7 @@
       { "type": "uint128", "name": "marketId" },
       { "type": "address", "name": "collateralType" }
     ],
-    "outputs": [{ "type": "uint256" }]
+    "outputs": [{ "type": "uint256", "name": "name" }]
   },
   {
     "type": "function",
@@ -1147,7 +1149,7 @@
       { "type": "uint128", "name": "marketId" },
       { "type": "uint256", "name": "maxIter" }
     ],
-    "outputs": [{ "type": "bool" }]
+    "outputs": [{ "type": "bool", "name": "name" }]
   },
   {
     "type": "function",
@@ -1156,7 +1158,7 @@
     "stateMutability": "view",
     "payable": false,
     "inputs": [{ "type": "uint128", "name": "marketId" }],
-    "outputs": [{ "type": "address" }]
+    "outputs": [{ "type": "address", "name": "name" }]
   },
   {
     "type": "function",
@@ -1165,7 +1167,7 @@
     "stateMutability": "view",
     "payable": false,
     "inputs": [{ "type": "uint128", "name": "marketId" }],
-    "outputs": [{ "type": "uint256" }]
+    "outputs": [{ "type": "uint256", "name": "name" }]
   },
   {
     "type": "function",
@@ -1173,7 +1175,7 @@
     "constant": false,
     "payable": false,
     "inputs": [{ "type": "uint128", "name": "marketId" }],
-    "outputs": [{ "type": "int256" }]
+    "outputs": [{ "type": "int256", "name": "name" }]
   },
   {
     "type": "function",
@@ -1181,7 +1183,7 @@
     "constant": true,
     "stateMutability": "view",
     "payable": false,
-    "inputs": [{ "type": "uint128" }, { "type": "uint256", "name": "amount" }],
+    "inputs": [{ "type": "uint128", "name": "name" }, { "type": "uint256", "name": "amount" }],
     "outputs": [
       { "type": "uint256", "name": "depositFeeAmount" },
       { "type": "uint256", "name": "withdrawFeeAmount" }
@@ -1194,7 +1196,7 @@
     "stateMutability": "view",
     "payable": false,
     "inputs": [{ "type": "uint128", "name": "marketId" }],
-    "outputs": [{ "type": "uint32" }]
+    "outputs": [{ "type": "uint32", "name": "name" }]
   },
   {
     "type": "function",
@@ -1203,7 +1205,7 @@
     "stateMutability": "view",
     "payable": false,
     "inputs": [{ "type": "uint128", "name": "marketId" }],
-    "outputs": [{ "type": "int128" }]
+    "outputs": [{ "type": "int128", "name": "name" }]
   },
   {
     "type": "function",
@@ -1238,7 +1240,7 @@
     "stateMutability": "view",
     "payable": false,
     "inputs": [{ "type": "uint128", "name": "marketId" }],
-    "outputs": [{ "type": "uint256" }]
+    "outputs": [{ "type": "uint256", "name": "name" }]
   },
   {
     "type": "function",
@@ -1247,7 +1249,7 @@
     "stateMutability": "view",
     "payable": false,
     "inputs": [{ "type": "uint128", "name": "marketId" }],
-    "outputs": [{ "type": "int256" }]
+    "outputs": [{ "type": "int256", "name": "name" }]
   },
   {
     "type": "function",
@@ -1256,7 +1258,7 @@
     "stateMutability": "view",
     "payable": false,
     "inputs": [{ "type": "uint128", "name": "marketId" }],
-    "outputs": [{ "type": "uint256" }]
+    "outputs": [{ "type": "uint256", "name": "name" }]
   },
   {
     "type": "function",
@@ -1265,7 +1267,7 @@
     "stateMutability": "view",
     "payable": false,
     "inputs": [],
-    "outputs": [{ "type": "address" }]
+    "outputs": [{ "type": "address", "name": "name" }]
   },
   {
     "type": "function",
@@ -1274,7 +1276,7 @@
     "stateMutability": "view",
     "payable": false,
     "inputs": [],
-    "outputs": [{ "type": "address" }]
+    "outputs": [{ "type": "address", "name": "name" }]
   },
   {
     "type": "function",
@@ -1283,7 +1285,7 @@
     "stateMutability": "view",
     "payable": false,
     "inputs": [{ "type": "uint128", "name": "marketId" }],
-    "outputs": [{ "type": "uint256" }]
+    "outputs": [{ "type": "uint256", "name": "name" }]
   },
   {
     "type": "function",
@@ -1292,7 +1294,7 @@
     "stateMutability": "view",
     "payable": false,
     "inputs": [{ "type": "uint128", "name": "marketId" }],
-    "outputs": [{ "type": "bool" }]
+    "outputs": [{ "type": "bool", "name": "name" }]
   },
   {
     "type": "function",
@@ -1369,7 +1371,7 @@
     "stateMutability": "view",
     "payable": false,
     "inputs": [],
-    "outputs": [{ "type": "uint256[]" }]
+    "outputs": [{ "type": "uint256[]", "name": "name" }]
   },
   {
     "type": "function",
@@ -1378,7 +1380,7 @@
     "stateMutability": "view",
     "payable": false,
     "inputs": [],
-    "outputs": [{ "type": "uint128" }]
+    "outputs": [{ "type": "uint128", "name": "name" }]
   },
   {
     "type": "function",
@@ -1539,7 +1541,7 @@
     "stateMutability": "view",
     "payable": false,
     "inputs": [],
-    "outputs": [{ "type": "uint256" }]
+    "outputs": [{ "type": "uint256", "name": "name" }]
   },
   {
     "type": "function",
@@ -1548,7 +1550,7 @@
     "stateMutability": "view",
     "payable": false,
     "inputs": [{ "type": "uint128", "name": "poolId" }],
-    "outputs": [{ "type": "address" }]
+    "outputs": [{ "type": "address", "name": "name" }]
   },
   {
     "type": "function",
@@ -1581,7 +1583,7 @@
       { "type": "uint128", "name": "poolId" },
       { "type": "address", "name": "collateral" }
     ],
-    "outputs": [{ "type": "uint256" }]
+    "outputs": [{ "type": "uint256", "name": "name" }]
   },
   {
     "type": "function",
@@ -1593,6 +1595,7 @@
     "outputs": [
       {
         "type": "tuple[]",
+        "name": "name",
         "components": [
           { "type": "uint128", "name": "marketId" },
           { "type": "uint128", "name": "weightD18" },
@@ -1617,7 +1620,7 @@
     "stateMutability": "view",
     "payable": false,
     "inputs": [{ "type": "uint128", "name": "poolId" }],
-    "outputs": [{ "type": "address" }]
+    "outputs": [{ "type": "address", "name": "name" }]
   },
   {
     "type": "function",
@@ -1790,7 +1793,7 @@
       { "type": "address", "name": "collateralType" },
       { "type": "address", "name": "distributor" }
     ],
-    "outputs": [{ "type": "uint256" }]
+    "outputs": [{ "type": "uint256", "name": "name" }]
   },
   {
     "type": "function",
@@ -1833,7 +1836,7 @@
       { "type": "address", "name": "collateralType" },
       { "type": "address", "name": "distributor" }
     ],
-    "outputs": [{ "type": "uint256" }]
+    "outputs": [{ "type": "uint256", "name": "name" }]
   },
   {
     "type": "function",
@@ -1846,7 +1849,7 @@
       { "type": "address", "name": "collateralType" },
       { "type": "address", "name": "distributor" }
     ],
-    "outputs": [{ "type": "uint256" }]
+    "outputs": [{ "type": "uint256", "name": "name" }]
   },
   {
     "type": "function",
@@ -1882,7 +1885,7 @@
       { "type": "address", "name": "collateralType" },
       { "type": "uint128", "name": "accountId" }
     ],
-    "outputs": [{ "type": "uint256[]" }, { "type": "address[]" }]
+    "outputs": [{ "type": "uint256[]", "name": "name" }, { "type": "address[]", "name": "name" }]
   },
   {
     "type": "event",
@@ -1943,7 +1946,7 @@
     "stateMutability": "pure",
     "payable": false,
     "inputs": [],
-    "outputs": [{ "type": "address" }]
+    "outputs": [{ "type": "address", "name": "name" }]
   },
   {
     "type": "function",
@@ -1952,7 +1955,7 @@
     "stateMutability": "pure",
     "payable": false,
     "inputs": [{ "type": "address", "name": "forwarder" }],
-    "outputs": [{ "type": "bool" }]
+    "outputs": [{ "type": "bool", "name": "name" }]
   },
   {
     "type": "function",
@@ -1983,7 +1986,7 @@
     "stateMutability": "view",
     "payable": false,
     "inputs": [{ "type": "bytes4", "name": "interfaceId" }],
-    "outputs": [{ "type": "bool" }]
+    "outputs": [{ "type": "bool", "name": "name" }]
   },
   {
     "type": "event",
@@ -2052,7 +2055,7 @@
       { "type": "uint128", "name": "poolId" },
       { "type": "address", "name": "collateralType" }
     ],
-    "outputs": [{ "type": "uint256" }]
+    "outputs": [{ "type": "uint256", "name": "name" }]
   },
   {
     "type": "function",
@@ -2090,7 +2093,7 @@
       { "type": "uint128", "name": "poolId" },
       { "type": "address", "name": "collateralType" }
     ],
-    "outputs": [{ "type": "uint256" }]
+    "outputs": [{ "type": "uint256", "name": "name" }]
   },
   {
     "type": "function",
@@ -2101,6 +2104,6 @@
       { "type": "uint128", "name": "poolId" },
       { "type": "address", "name": "collateralType" }
     ],
-    "outputs": [{ "type": "int256" }]
+    "outputs": [{ "type": "int256", "name": "name" }]
   }
 ]
