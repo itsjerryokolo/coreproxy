@@ -1,28 +1,5 @@
 [
   {
-    "type": "error",
-    "name": "ImplementationIsSterile",
-    "inputs": [{ "type": "address", "name": "implementation" }]
-  },
-  { "type": "error", "name": "NoChange", "inputs": [] },
-  {
-    "type": "error",
-    "name": "NotAContract",
-    "inputs": [{ "type": "address", "name": "contr" }]
-  },
-  {
-    "type": "error",
-    "name": "NotNominated",
-    "inputs": [{ "type": "address", "name": "addr" }]
-  },
-  {
-    "type": "error",
-    "name": "Unauthorized",
-    "inputs": [{ "type": "address", "name": "addr" }]
-  },
-  { "type": "error", "name": "UpgradeSimulationFailed", "inputs": [] },
-  { "type": "error", "name": "ZeroAddress", "inputs": [] },
-  {
     "type": "event",
     "anonymous": false,
     "name": "OwnerChanged",
@@ -113,8 +90,7 @@
     "inputs": [{ "type": "address", "name": "newImplementation" }],
     "outputs": []
   },
-  { "type": "error", "name": "ValueAlreadyInSet", "inputs": [] },
-  { "type": "error", "name": "ValueNotInSet", "inputs": [] },
+
   {
     "type": "event",
     "anonymous": false,
@@ -263,45 +239,7 @@
     ],
     "outputs": []
   },
-  {
-    "type": "error",
-    "name": "FeatureUnavailable",
-    "inputs": [{ "type": "bytes32", "name": "which" }]
-  },
-  {
-    "type": "error",
-    "name": "InvalidAccountId",
-    "inputs": [{ "type": "uint128", "name": "accountId" }]
-  },
-  {
-    "type": "error",
-    "name": "InvalidPermission",
-    "inputs": [{ "type": "bytes32", "name": "permission" }]
-  },
-  {
-    "type": "error",
-    "name": "OnlyAccountTokenProxy",
-    "inputs": [{ "type": "address", "name": "origin" }]
-  },
-  {
-    "type": "error",
-    "name": "PermissionDenied",
-    "inputs": [
-      { "type": "uint128", "name": "accountId" },
-      { "type": "bytes32", "name": "permission" },
-      { "type": "address", "name": "target" }
-    ]
-  },
-  {
-    "type": "error",
-    "name": "PermissionNotGranted",
-    "inputs": [
-      { "type": "uint128", "name": "accountId" },
-      { "type": "bytes32", "name": "permission" },
-      { "type": "address", "name": "user" }
-    ]
-  },
-  { "type": "error", "name": "PositionOutOfBounds", "inputs": [] },
+
   {
     "type": "event",
     "anonymous": false,
@@ -466,40 +404,7 @@
     ],
     "outputs": []
   },
-  {
-    "type": "error",
-    "name": "AccountNotFound",
-    "inputs": [{ "type": "uint128", "name": "accountId" }]
-  },
-  { "type": "error", "name": "EmptyDistribution", "inputs": [] },
-  {
-    "type": "error",
-    "name": "InsufficientCollateralRatio",
-    "inputs": [
-      { "type": "uint256", "name": "collateralValue" },
-      { "type": "uint256", "name": "debt" },
-      { "type": "uint256", "name": "ratio" },
-      { "type": "uint256", "name": "minRatio" }
-    ]
-  },
-  {
-    "type": "error",
-    "name": "MarketNotFound",
-    "inputs": [{ "type": "uint128", "name": "marketId" }]
-  },
-  {
-    "type": "error",
-    "name": "NotFundedByPool",
-    "inputs": [
-      { "type": "uint256", "name": "marketId" },
-      { "type": "uint256", "name": "poolId" }
-    ]
-  },
-  { "type": "error", "name": "OverflowInt256ToInt128", "inputs": [] },
-  { "type": "error", "name": "OverflowInt256ToUint256", "inputs": [] },
-  { "type": "error", "name": "OverflowUint128ToInt128", "inputs": [] },
-  { "type": "error", "name": "OverflowUint256ToInt256", "inputs": [] },
-  { "type": "error", "name": "OverflowUint256ToUint128", "inputs": [] },
+
   {
     "type": "event",
     "anonymous": false,
@@ -527,19 +432,7 @@
     ],
     "outputs": [{ "type": "int256" }]
   },
-  {
-    "type": "error",
-    "name": "MismatchAssociatedSystemKind",
-    "inputs": [
-      { "type": "bytes32", "name": "expected" },
-      { "type": "bytes32", "name": "actual" }
-    ]
-  },
-  {
-    "type": "error",
-    "name": "MissingAssociatedSystem",
-    "inputs": [{ "type": "bytes32", "name": "id" }]
-  },
+
   {
     "type": "event",
     "anonymous": false,
@@ -602,106 +495,7 @@
     ],
     "outputs": []
   },
-  { "type": "error", "name": "InvalidMessage", "inputs": [] },
-  {
-    "type": "error",
-    "name": "NotCcipRouter",
-    "inputs": [{ "type": "address" }]
-  },
-  {
-    "type": "error",
-    "name": "UnsupportedNetwork",
-    "inputs": [{ "type": "uint64" }]
-  },
-  {
-    "type": "function",
-    "name": "ccipReceive",
-    "constant": false,
-    "payable": false,
-    "inputs": [
-      {
-        "type": "tuple",
-        "name": "message",
-        "components": [
-          { "type": "bytes32", "name": "messageId" },
-          { "type": "uint64", "name": "sourceChainSelector" },
-          { "type": "bytes", "name": "sender" },
-          { "type": "bytes", "name": "data" },
-          {
-            "type": "tuple[]",
-            "name": "tokenAmounts",
-            "components": [
-              { "type": "address", "name": "token" },
-              { "type": "uint256", "name": "amount" }
-            ]
-          }
-        ]
-      }
-    ],
-    "outputs": []
-  },
-  {
-    "type": "error",
-    "name": "AccountActivityTimeoutPending",
-    "inputs": [
-      { "type": "uint128", "name": "accountId" },
-      { "type": "uint256", "name": "currentTime" },
-      { "type": "uint256", "name": "requiredTime" }
-    ]
-  },
-  {
-    "type": "error",
-    "name": "CollateralDepositDisabled",
-    "inputs": [{ "type": "address", "name": "collateralType" }]
-  },
-  { "type": "error", "name": "CollateralNotFound", "inputs": [] },
-  {
-    "type": "error",
-    "name": "FailedTransfer",
-    "inputs": [
-      { "type": "address", "name": "from" },
-      { "type": "address", "name": "to" },
-      { "type": "uint256", "name": "value" }
-    ]
-  },
-  {
-    "type": "error",
-    "name": "InsufficentAvailableCollateral",
-    "inputs": [
-      { "type": "uint256", "name": "amountAvailableForDelegationD18" },
-      { "type": "uint256", "name": "amountD18" }
-    ]
-  },
-  {
-    "type": "error",
-    "name": "InsufficientAccountCollateral",
-    "inputs": [{ "type": "uint256", "name": "amount" }]
-  },
-  {
-    "type": "error",
-    "name": "InsufficientAllowance",
-    "inputs": [
-      { "type": "uint256", "name": "required" },
-      { "type": "uint256", "name": "existing" }
-    ]
-  },
-  {
-    "type": "error",
-    "name": "InvalidParameter",
-    "inputs": [
-      { "type": "string", "name": "parameter" },
-      { "type": "string", "name": "reason" }
-    ]
-  },
-  { "type": "error", "name": "OverflowUint256ToUint64", "inputs": [] },
-  {
-    "type": "error",
-    "name": "PrecisionLost",
-    "inputs": [
-      { "type": "uint256", "name": "tokenAmount" },
-      { "type": "uint8", "name": "decimals" }
-    ]
-  },
+
   {
     "type": "event",
     "anonymous": false,
@@ -951,14 +745,7 @@
     "inputs": [{ "type": "address", "name": "collateralType" }],
     "outputs": [{ "type": "uint256" }]
   },
-  {
-    "type": "error",
-    "name": "InsufficientCcipFee",
-    "inputs": [
-      { "type": "uint256", "name": "requiredAmount" },
-      { "type": "uint256", "name": "availableAmount" }
-    ]
-  },
+
   {
     "type": "event",
     "anonymous": false,
@@ -981,16 +768,7 @@
     ],
     "outputs": [{ "type": "uint256", "name": "gasTokenUsed" }]
   },
-  {
-    "type": "error",
-    "name": "InsufficientDebt",
-    "inputs": [{ "type": "int256", "name": "currentDebt" }]
-  },
-  {
-    "type": "error",
-    "name": "PoolNotFound",
-    "inputs": [{ "type": "uint128", "name": "poolId" }]
-  },
+
   {
     "type": "event",
     "anonymous": false,
@@ -1052,20 +830,7 @@
     ],
     "outputs": []
   },
-  { "type": "error", "name": "CannotScaleEmptyMapping", "inputs": [] },
-  {
-    "type": "error",
-    "name": "IneligibleForLiquidation",
-    "inputs": [
-      { "type": "uint256", "name": "collateralValue" },
-      { "type": "int256", "name": "debt" },
-      { "type": "uint256", "name": "currentCRatio" },
-      { "type": "uint256", "name": "cratio" }
-    ]
-  },
-  { "type": "error", "name": "InsufficientMappedAmount", "inputs": [] },
-  { "type": "error", "name": "MustBeVaultLiquidated", "inputs": [] },
-  { "type": "error", "name": "OverflowInt128ToUint128", "inputs": [] },
+
   {
     "type": "event",
     "anonymous": false,
@@ -1184,24 +949,7 @@
       }
     ]
   },
-  {
-    "type": "error",
-    "name": "InsufficientMarketCollateralDepositable",
-    "inputs": [
-      { "type": "uint128", "name": "marketId" },
-      { "type": "address", "name": "collateralType" },
-      { "type": "uint256", "name": "tokenAmountToDeposit" }
-    ]
-  },
-  {
-    "type": "error",
-    "name": "InsufficientMarketCollateralWithdrawable",
-    "inputs": [
-      { "type": "uint128", "name": "marketId" },
-      { "type": "address", "name": "collateralType" },
-      { "type": "uint256", "name": "tokenAmountToWithdraw" }
-    ]
-  },
+
   {
     "type": "event",
     "anonymous": false,
@@ -1312,19 +1060,7 @@
     ],
     "outputs": []
   },
-  {
-    "type": "error",
-    "name": "IncorrectMarketInterface",
-    "inputs": [{ "type": "address", "name": "market" }]
-  },
-  {
-    "type": "error",
-    "name": "NotEnoughLiquidity",
-    "inputs": [
-      { "type": "uint128", "name": "marketId" },
-      { "type": "uint256", "name": "amount" }
-    ]
-  },
+
   {
     "type": "event",
     "anonymous": false,
@@ -1660,24 +1396,7 @@
     "inputs": [{ "type": "uint128", "name": "poolId" }],
     "outputs": []
   },
-  {
-    "type": "error",
-    "name": "CapacityLocked",
-    "inputs": [{ "type": "uint256", "name": "marketId" }]
-  },
-  {
-    "type": "error",
-    "name": "MinDelegationTimeoutPending",
-    "inputs": [
-      { "type": "uint128", "name": "poolId" },
-      { "type": "uint32", "name": "timeRemaining" }
-    ]
-  },
-  {
-    "type": "error",
-    "name": "PoolAlreadyExists",
-    "inputs": [{ "type": "uint128", "name": "poolId" }]
-  },
+
   {
     "type": "event",
     "anonymous": false,
@@ -2014,15 +1733,7 @@
     ],
     "outputs": []
   },
-  { "type": "error", "name": "OverflowUint256ToUint32", "inputs": [] },
-  { "type": "error", "name": "OverflowUint32ToInt32", "inputs": [] },
-  { "type": "error", "name": "OverflowUint64ToInt64", "inputs": [] },
-  { "type": "error", "name": "RewardDistributorNotFound", "inputs": [] },
-  {
-    "type": "error",
-    "name": "RewardUnavailable",
-    "inputs": [{ "type": "address", "name": "distributor" }]
-  },
+
   {
     "type": "event",
     "anonymous": false,
@@ -2273,27 +1984,6 @@
     "payable": false,
     "inputs": [{ "type": "bytes4", "name": "interfaceId" }],
     "outputs": [{ "type": "bool" }]
-  },
-  {
-    "type": "error",
-    "name": "InsufficientDelegation",
-    "inputs": [{ "type": "uint256", "name": "minDelegation" }]
-  },
-  { "type": "error", "name": "InvalidCollateralAmount", "inputs": [] },
-  {
-    "type": "error",
-    "name": "InvalidLeverage",
-    "inputs": [{ "type": "uint256", "name": "leverage" }]
-  },
-  {
-    "type": "error",
-    "name": "PoolCollateralLimitExceeded",
-    "inputs": [
-      { "type": "uint128", "name": "poolId" },
-      { "type": "address", "name": "collateralType" },
-      { "type": "uint256", "name": "currentCollateral" },
-      { "type": "uint256", "name": "maxCollateral" }
-    ]
   },
   {
     "type": "event",

@@ -1,4 +1,4 @@
-specVersion: 1.0.0
+specVersion: 1.2.0
 indexerHints:
   prune: auto
 schema:
@@ -10,7 +10,7 @@ dataSources:
     source:
       address: "0xffffffaeff0b96ea8e4f94b2253f31abdd875847"
       abi: Contract
-      startBlock: 0
+      startBlock: 17139861
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.7
